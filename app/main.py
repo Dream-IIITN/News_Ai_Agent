@@ -9,7 +9,9 @@ from dotenv import load_dotenv
 import os
 from utils import clean_text  # Ensure this is correctly implemented
 # Initialize LLM
-llm = ChatGroq(temperature=0,model_name="deepseek-r1-distill-qwen-32b", groq_api_key="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")
+load_dotenv()
+ast = os.getenv(GROQ_API_KEY)
+llm = ChatGroq(temperature=0,model_name="deepseek-r1-distill-qwen-32b", groq_api_key=ast)
 
 # Function to process news article
 def parse_and_classify_news(url):
