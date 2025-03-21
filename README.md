@@ -28,25 +28,12 @@ This project implements a **Retrieval-Augmented Generation (RAG) pipeline** usin
 - **Streamlit** (Frontend UI for Interaction)
 - **GroqCloud (DeepSeek-Qwen-32B / Llama-3.3-70B / Mistral-70B)** (LLM)
 
-## 📂 Project Structure
-```
-├── src
-│   ├── agents.py          # CrewAI Agents (Search, SEO, Retriever, Graders)
-│   ├── classify_parse.py  # News Classification & Parsing
-│   ├── embedder.py        # ChromaDB Embedding & Retrieval
-│   ├── rag_pipeline.py    # RAG Workflow Implementation
-│   ├── app.py             # FastAPI Endpoints
-│   ├── frontend.py        # Streamlit Frontend
-│   ├── utils.py           # Helper Functions (Cleaning, Storage)
-│
-├── data
-│   ├── news_dataset.csv   # Preprocessed News Data
-│   ├── chromadb_index/    # ChromaDB Vector Store
-│
-├── README.md              # Project Documentation
-├── requirements.txt       # Python Dependencies
-├── .env                   # API Keys & Configuration
-```
+### Input the News page Link:
+    ![step 1](/images/input.jpg)
+
+### Final Output With News fetch
+classifies the type of news and generates a summary
+    ![step 2](/images/Output.jpg)
 
 ## 🏗️ Setup & Installation
 ### 1️⃣ Clone Repository
@@ -65,25 +52,18 @@ Create a `.env` file and add:
 ```env
 TAVILY_API_KEY=your_tavily_key
 GROQ_API_KEY=your_groq_key
-CHROMADB_PATH=./data/chromadb_index
 ```
 
-### 4️⃣ Run the FastAPI Backend
-```sh
-uvicorn src.app:app --reload
+### 4️⃣ Run the Backend
+```bash
+python scrapper.py run 
 ```
 
 ### 5️⃣ Run the Streamlit Frontend
-```sh
-streamlit run src/frontend.py
+```bash
+streamlit run app.py
 ```
-
 ## 🏃 Usage
-### 🔹 **Querying the System** (API)
-Send a GET request:
-```sh
-curl -X GET "http://localhost:8000/query?prompt='Latest updates on AI regulation'"
-```
 
 ### 🔹 **Using the Streamlit UI**
 1. Open `http://localhost:8501` in your browser.
