@@ -29,11 +29,12 @@ This project implements a **Retrieval-Augmented Generation (RAG) pipeline** usin
 - **GroqCloud (DeepSeek-Qwen-32B / Llama-3.3-70B / Mistral-70B)** (LLM)
 
 ### Input the News page Link:
-    ![step 1](/images/input.jpg)
+![step 2](/images/Output.jpg)
 
 ### Final Output With News fetch
 classifies the type of news and generates a summary
-    ![step 2](/images/Output.jpg)
+![step 1](/images/input.jpg)
+   
 
 ## 🏗️ Setup & Installation
 ### 1️⃣ Clone Repository
